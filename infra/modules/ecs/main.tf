@@ -62,7 +62,8 @@ resource "aws_ecs_cluster" "this" {
 }
 
 resource "aws_lb" "this" {
-  name               = "${var.project_name}-alb"
+  # name               = "${var.project_name}-alb"
+  name               = "${substr(var.project_name, 0, 24)}-alb"
   internal           = false
   load_balancer_type = "application"
 
